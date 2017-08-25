@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="style.css"></head>
 <body>
 <div id='content'>
 	<h2 align = 'left'>Towards a Large Corpus of Richly Annotated Web Tables<br>for Knowledge Base Population</h2>
-	<p><b>Authors:</b> Philipp Braukmann, Lorenzo Cazzoli, Basil Ell*, Sherzod Hakimov*, Fabian Kaupmann, Amerigo Mancino, Junaid Altaf Memon, Kai Rother, Abhishek Saini</p>
+	<p><b>Authors:</b> 
+Basil Ell,
+Sherzod Hakimov,
+Philipp Braukmann,
+Lorenzo Cazzoli,
+Fabian Kaupmann,
+Amerigo Mancino,
+Junaid Altaf Memon,
+Kai Rother,
+Abhishek Saini, and
+Philipp Cimiano
+</p>
 <ul id='nav'>
   <li id='nav_li'><a class ='nav' href="index.html">Introduction</a></li>
   <li id='nav_li'><a class ='nav' id="active" href="stats.html">Statistics and Data</a></li>
@@ -14,10 +26,9 @@
 	<ol>
 	<br>
 	<li id= 'lh3'> Data and Measurements </li>
-		<p>Our scheduler is implemented to work with the specific structure of the WTC dataset. The dataset is divided into 99 tar archives, each of which contain files with tables. The results in this section were computed on a sample of 1.000.000 tables. This sample is constructed by taking the first 62, 500 tables from each of the first 16 archives in the corpus.
+		<p>Our scheduler is implemented to work with the specific structure of the WTC dataset. The dataset is divided into 99 tar archives, each of which contain files with tables. The results in this section were computed on a sample of 1.000.000 tables. This sample is constructed by taking the first 62,500 tables from each of the first 16 archives in the corpus.
 <br><br>			
-In a prior run through the whole WTC corpus, we detected one of the five languages (English, German, Catalan, French, , Spanish) in most tables. Currently we exclude tables in other languages after the language detection step. These tables will still be taken into account for language detection statistics. However, they do not appear in statistics of later tasks such as
-table normalization, entity linking, and literal linking.
+In a prior run through the whole WTC corpus, we detected one of the five languages (English, German, Catalan, French, Spanish) in most tables. Currently we exclude tables in other languages after the language detection step. These tables will still be taken into account for language detection statistics. However, they do not appear in statistics of later tasks such as table normalization, entity linking, and literal linking.
 <br><br>			
 Note that in this section we do not evaluate the correctness of the hypotheses created. Rather, we provide data that might tell us something about the nature of the data and our approaches. For example, it is interesting to know how many tables exist where no hypotheses were added or where for a cell that, according to table normalization, contains a literal value and multiple literal linking hypotheses are created that specify that this literal is the object of triples with different subject entities. For example, a value could be the birth date of one entity as well as the foundation date of another entity. These can then be analyzed manually to check whether the tasks need to be improved or whendevising more advanced tasks, such as triplification.
 		</p>
@@ -51,7 +62,7 @@ entity linking. The remaining 349,284 tables went through all processing steps. 
 For Visualisation of Measurements <a href='tn.html'>Click here.</a></p>
 	<br>
 	<li id = 'lh4'>Entity Linking Task</li>
-	 <p>n the Entity Linking task, we measured how many entity linking hypotheses (distinguished between resources, classes and properties) were created on average per table, row, column, and cell. The XXX task has generated at least one hypothesis on YYY tables [ZZZ%].
+	 <p>In the Entity Linking task, we measured how many entity linking hypotheses (distinguished between resources, classes and properties) were created on average per table, row, column, and cell. The XXX task has generated at least one hypothesis on YYY tables [ZZZ%].
 		 <br>
 		 For Visualisation of Measurements <a href='el.html'>Click here.</a></p>
 	<br>
@@ -62,9 +73,4 @@ For Visualisation of Measurements <a href='tn.html'>Click here.</a></p>
 		</ol>
 		</div>
 </body>
-		<br><br><br>
-	<footer id="acknowledgement">
-		<p align= 'center'>This Site has details about project (LD4IE2017-ISY-WTU) done by Master's Students at University of Bielefeld </p>
-	</footer>
-
 </html>
