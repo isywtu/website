@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
+		<script src="jsonToHtml.js"></script>
+    	<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$( function() {
+    $( "#dialog-box" ).draggable();
+  } );
+  </script>
+	
+<style>
+        table
+        {   margin-left:20px ;
+            border:solid 1px #333;
+            padding:2px 4px;
+            font:15px Verdana;
+	  }
+        th{
+			text-align: center;
+			border:solid 1px #333;
+            font-weight:bold;
+        }
+		td{ 
+			padding-left: 10px;
+			text-align: left;
+			border:solid 1px #333;
+		} 
+		button{
+		float: right;
+		}
+	#dialog-overlay {
+
+	/* set it to fill the whil screen */
+	width:100%; 
+	height:100%;
+	
+	/* transparency for different browsers */
+	filter:alpha(opacity=50); 
+	-moz-opacity:0.5; 
+	-khtml-opacity: 0.5; 
+	opacity: 0.5; 
+	background:#000; 
+
+	/* make sure it appear behind the dialog box but above everything else */
+	top:0; left:0; 
+	z-index:3000; 
+
+	/* hide it by default */
+	display:none;
+}
+
+
+#dialog-box {
+	
+	/* css3 drop shadow */
+	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	
+	/* css3 border radius */
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+	
+	background:#eee;
+	/* styling of the dialog box, i have a fixed dimension for this demo */ 
+	width:328px; 
+	
+	/* make sure it has the highest z-index */
+	position:absolute; 
+	z-index:5000; 
+
+	/* hide it by default */
+	display:none;
+}
+
+#dialog-box .dialog-content {
+	/* style the content */
+	text-align:left; 
+	padding:10px; 
+	margin:13px;
+	color:#666; 
+	font-family:arial;
+	font-size:15px;
+}
+
+a.button {
+	/* styles for button */
+	margin:10px auto 0 auto;
+	text-align:center;
+	display: block;
+	width:80px;
+	padding: 5px 10px 6px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 1;
+	
+	/* button color */
+	background-color: #e33100;
+	
+	/* css3 implementation :) */
+	/* rounded corner */
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	/* drop shadow */
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	
+	/* text shaow */
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+	
+}
+
+a.button:hover {
+	background-color: #c33100;	
+}
+
+/* extra styling */
+#dialog-box .dialog-content p {
+	font-weight:700; margin:0;
+}
+
+#dialog-box .dialog-content ul {
+	margin:10px 0 10px 20px; 
+	padding:0; 
+	height:50px;
+}
+    </style>
+</head>
+<body>
+<div id='content'>
+	<h2 align = 'left'>Towards a Large Corpus of Richly Annotated Web Tables<br>for Knowledge Base Population</h2>
+	<p><b>Authors:</b> 
+Basil Ell,
+Sherzod Hakimov,
+Philipp Braukmann,
+Lorenzo Cazzoli,
+Fabian Kaupmann,
+Amerigo Mancino,
+Junaid Altaf Memon,
+Kai Rother,
+Abhishek Saini, and
+Philipp Cimiano
+</p>
+<ul id='nav'>
+  <li id='nav_li'><a class ='nav' href="index.html">Introduction</a></li>
+  <li id='nav_li'><a class ='nav'  href="stats.html">Statistics and Data</a></li>
+  <li id='nav_li'><a class ='nav' id="active" href="sample.html">Sample Table</a></li>
+	<li id='nav_li' style = 'float:right'><a class ='nav'  href="download.html">Downloads</a></li>
+	</ul>
+<br>
+	<p>This Table is the sample json table having some entities.</p>
+	<div id="showData1" label='table1'></div>
+	<br><br>
+	<p>This Table shows different sample hypotheses of the entities (found in our Index files which somehow matches to the entities in the Sample table above). To view hypotheses click on buttons in the table. Stating below are the abbreviations of different task having hypotheses. <br><br>
+EL = Entity Linking, TN = Table Normalization, LL = Literal Linking, LD = Language Detection, TC = Table Classification, TO = Table Orientation, TS = Table Segmentation, OD = Orientation Detection
+	</p>
+    <div id="showData"  style = " height: 400px; overflow:auto; border: solid 1px;">	
+	</div>
+</div>
+	<div id="dialog-overlay"></div>
+<div id="dialog-box">
+	<div class="dialog-content">
+		<div id="dialog-message"></div>
+		<a href="#" class="button">Close</a>
+	</div>
+</div>
+	<br><br><br>
+</body>
+<html>
