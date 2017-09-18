@@ -41,18 +41,22 @@
 	height:100%;
 	
 	/* transparency for different browsers */
+	
 	filter:alpha(opacity=50); 
 	-moz-opacity:0.5; 
 	-khtml-opacity: 0.5; 
 	opacity: 0.5; 
-	background:#000; 
+	background:#000;
 
 	/* make sure it appear behind the dialog box but above everything else */
+	position:relative; 
 	top:0; left:0; 
 	z-index:3000; 
 
 	/* hide it by default */
 	display:none;
+
+		
 }
 
 
@@ -158,10 +162,10 @@ Philipp Cimiano
 	<li id='nav_li' style = 'float:right'><a class ='nav'  href="download.html">Downloads</a></li>
 	</ul>
 <br>
-	<p>This Table is the sample json table having some entities.</p>
+	<p>Below Table is the sample json table having some entities.</p>
 	<div id="showData1" label='table1'></div>
 	<br><br>
-	<p>This Table shows different sample hypotheses of the entities (found in our Index files which somehow matches to the entities in the Sample table above). To view hypotheses click on buttons in the table. Stating below are the abbreviations of different task having hypotheses. <br><br>
+	<p>Below Table shows different sample hypotheses of the entities (found in our Index files which somehow matches to the entities in the Sample table above). To view hypotheses click on buttons in the table. Stating below are the abbreviations of different task having hypotheses. <br><br>
 EL = Entity Linking, TN = Table Normalization, LL = Literal Linking, LD = Language Detection, TC = Table Classification, TO = Table Orientation, TS = Table Segmentation, OD = Orientation Detection
 	</p>
     <div id="showData"  style = " height: 400px; overflow:auto; border: solid 1px;">	
@@ -174,6 +178,6 @@ EL = Entity Linking, TN = Table Normalization, LL = Literal Linking, LD = Langua
 		<a href="#" class="button">Close</a>
 	</div>
 </div>
-	<br><br><br>
+	<br><br>
 </body>
 <html>
