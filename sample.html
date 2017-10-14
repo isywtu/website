@@ -54,10 +54,6 @@
 	position:relative; 
 	top:0; left:0; 
 	z-index:3000; 
-
-	/* hide it by default */
-	display:none;
-
 		
 }
 
@@ -73,7 +69,9 @@
 	
 	background:#eee;
 	/* styling of the dialog box, i have a fixed dimension for this demo */ 
-	width:328px; 
+	width:358px;
+	height: 200px;
+	overflow: auto;
 	
 	/* make sure it has the highest z-index */
 	position:absolute; 
@@ -95,15 +93,13 @@
 
 a.button {
 	/* styles for button */
-	margin:10px auto 0 auto;
+	margin:10px auto 0 300px;
 	text-align:center;
 	display: block;
-	width:80px;
+	width:30px;
 	padding: 5px 10px 6px;
 	color: #fff;
 	text-decoration: none;
-	font-weight: bold;
-	line-height: 1;
 	
 	/* button color */
 	background-color: #e33100;
@@ -172,14 +168,14 @@ EL = Entity Linking, TN = Table Normalization, LL = Literal Linking, LD = Langua
 	</p>
     <div id="showData"  style = "overflow:auto;">	
 	</div>
-</div>
 	<div id="dialog-overlay"></div>
 <div id="dialog-box">
+		<a href="#" class="button">x</a>
 	<div class="dialog-content">
 		<div id="dialog-message"></div>
-		<a href="#" class="button">Close</a>
 	</div>
-</div>
+		</div>
+	</div>
 	<br><br>
 </body>
 <html>
